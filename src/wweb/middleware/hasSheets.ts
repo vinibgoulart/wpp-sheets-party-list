@@ -1,5 +1,6 @@
 import { Message } from "whatsapp-web.js";
 import SheetModel from "../../sheets/SheetModel";
+import { __ } from "i18n";
 
 export const hasSheets = async (msg: Message, next?: () => unknown) => {
   const chat = await msg.getChat();
@@ -17,7 +18,7 @@ export const hasSheets = async (msg: Message, next?: () => unknown) => {
   });
 
   if (!sheets) {
-    msg.reply("No sheets found, create one with `!sheet-create`");
+    msg.reply(__("No sheets found, create one with `!sheet-create`"));
     return;
   }
 

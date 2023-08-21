@@ -28,11 +28,9 @@ const sheetCreateMessage = async (msg: Message) => {
   const { sheet } = await handleCreateEvent(payload);
 
   msg.reply(
-    `*${__("Sheet Created")}*
-      
-      *ID*: ${sheet.sheetId}
-      
-      *Url*: ${sheet.sheetUrl}`
+    `*${__("Sheet Created")}:*
+ID: *${sheet.sheetId}*      
+Url: *${sheet.sheetUrl}*`
   );
 
   msg.reply(
@@ -46,7 +44,7 @@ const sheetCreateMessage = async (msg: Message) => {
   chat.setSubject(`${chat.name} - In Progress`);
 
   setSheetsInDescription(chat, {
-    sheetsUrl: sheet.sheetsUrl,
+    sheetsUrl: sheet.sheetUrl,
   });
 };
 
