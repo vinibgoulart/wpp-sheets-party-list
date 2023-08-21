@@ -23,7 +23,7 @@
   "Listening to new names": "Ouvindo novos nomes",
   "Stopped listening to new names": "Parou de ouvir novos nomes",
   "Create a sheets with Guests and Free columns": "Create a sheets with Guests and Free columns",
-  "See the details of the current sheets": "See the details of the current sheets",
+  "See the details of the current sheets": "Ver os detalhes da planilha atual",
   "All names are inserted in the Guests column, to insert one in the Free column, send the prefix `!free` in your message, see more by running `!help`": "Todos os nomes são inseridos na coluna Guests, para inserir um na coluna Free, envie o prefixo `!free` na sua mensagem, veja mais executando `!help`",
   "You can make the bot stop listening for new names by running the `/stop-listening` command, don't forget to call again when you want to send new names": "Você pode fazer o bot parar de ouvir novos nomes executando o comando `/stop-listening`, não se esqueça de chamar novamente quando quiser enviar novos nomes",
   "Names separated by commas": "Nomes separados por vírgulas",
