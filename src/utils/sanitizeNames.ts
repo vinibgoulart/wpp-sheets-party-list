@@ -1,10 +1,10 @@
 export const sanitizeNames = (input: string) => {
-  const regex = /[^\w\s]+/g; //
+  const regex = /^\d+\s*[-]?\s*/; //
   const lines = input.split(/\n|,/);
   const sanitizedNames = [];
 
   for (let line of lines) {
-    const sanitizedLine = line.trim().replace(regex, "");
+    const sanitizedLine = line.trim().replace(regex, "").replace(/^-\s*/, "");
     if (sanitizedLine.length > 0) {
       sanitizedNames.push(sanitizedLine);
     }
