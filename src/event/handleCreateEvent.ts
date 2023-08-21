@@ -1,6 +1,6 @@
+import { __ } from "i18n";
 import SheetModel from "../sheets/SheetModel";
 import { createSheet } from "../sheets/api/createSheet";
-import { EVENT_SHEET_COLUMN_ENUM } from "./EventSheetColumnEnum";
 import { EVENT_SHEET_TITLE_ENUM } from "./EventSheetTitleEnum";
 
 type HandleCreateSheetParam = {
@@ -24,7 +24,7 @@ export const handleCreateEvent = async (params: HandleCreateSheetParam) => {
                 values: [
                   {
                     userEnteredValue: {
-                      stringValue: EVENT_SHEET_COLUMN_ENUM.GUESTS,
+                      stringValue: __("Guests"),
                     },
                   },
                 ],
@@ -39,7 +39,7 @@ export const handleCreateEvent = async (params: HandleCreateSheetParam) => {
                 values: [
                   {
                     userEnteredValue: {
-                      stringValue: EVENT_SHEET_COLUMN_ENUM.FREE,
+                      stringValue: __("Free"),
                     },
                   },
                 ],

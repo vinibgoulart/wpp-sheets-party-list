@@ -30,5 +30,7 @@
   "Names separated by line breaks": "Nomes separados por quebras de linha",
   "Names with a hyphen or number at the beginning": "Nomes com hífen ou número no início",
   "All names are accepted and formatted for capital case, in addition to being automatically organized in alphabetical order": "Todos os nomes são aceitos e formatados para maiúsculas, além de serem organizados automaticamente em ordem alfabética",
-  "No sheets found, create one with `!sheet-create`": "Nenhuma planilha encontrada, crie uma com `!sheet-create`"
+  "No sheets found, create one with `!sheet-create`": "Nenhuma planilha encontrada, crie uma com `!sheet-create`",
+  "Guests": "Convidados",
+  "Free": "Cortesia"
 }
