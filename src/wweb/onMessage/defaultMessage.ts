@@ -3,8 +3,8 @@ import { sanitizeNames } from "../../utils/sanitizeNames";
 import { handleAddGuest } from "../../event/handleAddGuest";
 
 const defaultMessage = async (msg: Message) => {
-  if (msg.type !== MessageTypes.TEXT) {
-    return;
+  if (!msg.body) {
+    return
   }
 
   const sanitizedNames = sanitizeNames(msg.body);
