@@ -17,31 +17,31 @@ export const onMessage = () => {
       case "!help":
         return helpMessage(msg);
 
-      case "!how-it-works":
+      case "!hiw":
         return howItWorksMessage(msg);
 
-      case "!input-examples":
+      case "!ie":
         return inputExamplesMessage(msg);
 
-      case "!sheet-create":
+      case "!sc":
         return sheetsCreateMessage(msg);
 
-      case "!sheet-detail":
+      case "!sd":
         return hasSheets(msg, async () => {
           sheetsDetailMessage(msg);
         });
 
-      case "!sheet-finish":
+      case "!sf":
         return hasSheets(msg, async () => {
           sheetsFinishMessage(msg);
         });
 
-      case "!start-listening":
+      case "!start":
         return hasSheets(msg, async () => {
           startListeningMessage(msg);
         });
 
-      case "!stop-listening":
+      case "!stop":
         return hasSheets(msg, async () => {
           stopListeningMessage(msg);
         });

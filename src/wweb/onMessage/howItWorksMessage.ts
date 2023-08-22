@@ -18,7 +18,7 @@ ${__(
 )}
 
 ${__(
-  "You can submit names in several ways, send `!input-examples` to see all accepted forms"
+  "You can submit names in several ways, send `!ie` to see all accepted forms"
 )}
 
 ${__(
@@ -30,7 +30,7 @@ ${__(
 )}
 
 ${__(
-  "You can make the bot stop listening for new names by running the `/stop-listening` command, don't forget to call again when you want to send new names"
+  "You can make the bot stop listening for new names by running the `/stop` command, don't forget to call again when you want to send new names"
 )}
 
 ${__(

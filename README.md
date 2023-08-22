@@ -10,13 +10,13 @@ You can look up commands on sheets using !help.
 
 When a list is in progress, all messages sent in the group will be sent to Excel. Therefore, it is recommended that there are no parallel conversations other than names in the group. 
 
-You can submit names in several ways; send !input-examples to see all accepted forms.
+You can submit names in several ways; send !ie to see all accepted forms.
 
 When creating an event, you create it with the Guests and Free columns. 
 
 All names are inserted in the Guests column. To insert one in the Free column, send the prefix !free in your message. 
 
-You can find out more by running !help. You can make the bot stop listening for new names by running the /stop-listening command. 
+You can find out more by running !help. You can make the bot stop listening for new names by running the /stop command. 
 
 Don't forget to call again when you want to send new names. 
 
@@ -79,11 +79,11 @@ Start the server
 | Input              | Description                                          | Require a Sheet |
 | :----------------- | :--------------------------------------------------- | :-------------- |
 | `!help`            | Show all commands                                    | False           |
-| `!how-it-works`    | Explanation of how it works                          | False           |
-| `!input-examples`  | Show name input examples                             | False           |
-| `!sheet-create`    | Create a sheet with `Guests` and `Free` columns      | False           |
-| `!sheet-detail`    | See the details of the current sheet                 | True            |
-| `!sheet-finish`    | Ends the list, making it possible to start a new one | True            |
-| `!stop-listening`  | Stop listening to new names                          | True            |
-| `!start-listening` | Start listening to new names                         | True            |
+| `!hiw`    | Explanation of how it works                          | False           |
+| `!ie`  | Show name input examples                             | False           |
+| `!sc`    | Create a sheet with `Guests` and `Free` columns      | False           |
+| `!sd`    | See the details of the current sheet                 | True            |
+| `!sf`    | Ends the list, making it possible to start a new one | True            |
+| `!stop`  | Stop listening to new names                          | True            |
+| `!start` | Start listening to new names                         | True            |
 | `!free`            | Add names in free column of current list             | True            |

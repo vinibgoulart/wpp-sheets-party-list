@@ -15,7 +15,7 @@ const sheetCreateMessage = async (msg: Message) => {
   });
 
   if (sheetExistent) {
-    msg.reply(__("Sheet already exists, use `!sheet-detail`"));
+    msg.reply(__("Sheet already exists, use `!sd`"));
     return;
   }
 
@@ -35,7 +35,7 @@ Url: *${sheet.sheetUrl}*`
 
   msg.reply(
     __(
-      "Listening to new names, use `!stop-listening` to stop listening to new names"
+      "Listening to new names, use `!stop` to stop listening to new names"
     )
   );
 

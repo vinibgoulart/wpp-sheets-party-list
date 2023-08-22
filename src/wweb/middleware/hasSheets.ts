@@ -18,7 +18,7 @@ export const hasSheets = async (msg: Message, next?: () => unknown) => {
   });
 
   if (!sheets) {
-    msg.reply(__("No sheets found, create one with `!sheet-create`"));
+    msg.reply(__("No sheets found, create one with `!sc`"));
     return;
   }
 
