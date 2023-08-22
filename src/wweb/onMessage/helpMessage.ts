@@ -10,9 +10,12 @@ const helpMessage = (msg: Message) => {
 *!sc*: ${__("Create a sheets with Guests and Free columns")}
 *!sd*: ${__("See the details of the current sheets")}
 *!sf*: ${__("Ends the list, making it possible to start a new one")}
+
+*Managing the group*
 *!stop*: ${__("Stop listening to new names")}
 *!start*: ${__("Start listening to new names")}
 *!free*: ${__("Use replying to a message to add a name to the Free column")}
+*!paid*: ${__("Use replying to a message to add a name to the Paid column")}
 
 *Documentation*
 https://github.com/vinibgoulart/wpp-sheets-party-list

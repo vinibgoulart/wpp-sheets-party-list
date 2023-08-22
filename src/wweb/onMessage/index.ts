@@ -4,6 +4,7 @@ import freeMessage from "./freeMessage";
 import helpMessage from "./helpMessage";
 import howItWorksMessage from "./howItWorksMessage";
 import inputExamplesMessage from "./inputExamplesMessage";
+import paidMessage from "./paidMessage";
 import sheetsCreateMessage from "./sheetsCreateMessage";
 import sheetsDetailMessage from "./sheetsDetailMessage";
 import sheetsFinishMessage from "./sheetsFinishMessage";
@@ -39,6 +40,9 @@ export const onMessage = () => {
 
       case "!free":
         return freeMessage(msg);
+
+      case "!paid":
+        return paidMessage(msg);
 
       default:
         return defaultMessage(msg);

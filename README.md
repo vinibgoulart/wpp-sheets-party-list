@@ -87,3 +87,4 @@ Start the server
 | `!stop`  | Stop listening to new names                                | True            |
 | `!start` | Start listening to new names                               | True            |
 | `!free`  | Use replying to a message to add a name to the Free column | True            |
+| `!paid`  | Use replying to a message to add a name to the Paid column | True            |

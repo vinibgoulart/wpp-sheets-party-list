@@ -21,7 +21,7 @@ const defaultMessage = async (msg: Message) => {
 
   await handleAddParticipant(payload);
 
-  msg.react("👍");
+  msg.react("✅");
 };
 
 export default middleware(defaultMessage, {

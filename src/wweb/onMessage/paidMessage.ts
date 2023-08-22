@@ -4,7 +4,7 @@ import { handleAddParticipant } from "../../event/handleAddParticipant";
 import { EVENT_COLUMN_ENUM } from "../../event/EventColumnEnum";
 import { middleware } from "../middleware/middleware";
 
-const freeMessage = async (msg: Message) => {
+const paidMessage = async (msg: Message) => {
   const quotedMessage = await msg.getQuotedMessage();
 
   const sanitizedNames = sanitizeNames(quotedMessage.body);
@@ -14,14 +14,14 @@ const freeMessage = async (msg: Message) => {
   const payload = {
     groupId,
     names: sanitizedNames,
-    column: EVENT_COLUMN_ENUM.FREE,
+    column: EVENT_COLUMN_ENUM.PAID,
   };
 
   await handleAddParticipant(payload);
 
-  msg.react("🚀");
+  msg.react("💸");
 };
 
-export default middleware(freeMessage, {
+export default middleware(paidMessage, {
   hasSheets: true,
 });
