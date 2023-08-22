@@ -1,6 +1,7 @@
 import type { Message } from "whatsapp-web.js";
 import SheetModel from "../../sheets/SheetModel";
 import { __ } from "i18n";
+import { middleware } from "../middleware/middleware";
 
 const startListeningMessage = async (msg: Message) => {
   const groupId = msg.id.remote;
@@ -22,4 +23,6 @@ const startListeningMessage = async (msg: Message) => {
   msg.react("👍");
 };
 
-export default startListeningMessage;
+export default middleware(startListeningMessage, {
+  hasSheets: true,
+});

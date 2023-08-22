@@ -34,9 +34,7 @@ Url: *${sheet.sheetUrl}*`
   );
 
   msg.reply(
-    __(
-      "Listening to new names, use `!stop` to stop listening to new names"
-    )
+    __("Listening to new names, use `!stop` to stop listening to new names")
   );
 
   msg.react("👍");

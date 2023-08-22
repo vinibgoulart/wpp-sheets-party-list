@@ -1,12 +1,12 @@
 import { Message } from "whatsapp-web.js";
 import SheetModel from "../../sheets/SheetModel";
 
-export const isListening = async (msg: Message, next?: () => unknown) => {
+export const isListening = async (msg: Message) => {
   const chat = await msg.getChat();
 
   if (!chat.isGroup) {
     msg.reply("This command only works in groups");
-    return;
+    return false;
   }
 
   const groupId = msg.id.remote;
@@ -17,9 +17,9 @@ export const isListening = async (msg: Message, next?: () => unknown) => {
     isListening: true,
   });
 
-  if (sheets) {
-    next && next();
+  if (!sheets) {
+    return false;
   }
 
-  return;
+  return true;
 };

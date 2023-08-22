@@ -2,12 +2,12 @@ import { Message } from "whatsapp-web.js";
 import SheetModel from "../../sheets/SheetModel";
 import { __ } from "i18n";
 
-export const hasSheets = async (msg: Message, next?: () => unknown) => {
+export const hasSheets = async (msg: Message) => {
   const chat = await msg.getChat();
 
   if (!chat.isGroup) {
     msg.reply("This command only works in groups");
-    return;
+    return false;
   }
 
   const groupId = msg.id.remote;
@@ -19,8 +19,8 @@ export const hasSheets = async (msg: Message, next?: () => unknown) => {
 
   if (!sheets) {
     msg.reply(__("No sheets found, create one with `!sc`"));
-    return;
+    return false;
   }
 
-  next && next();
+  return true;
 };

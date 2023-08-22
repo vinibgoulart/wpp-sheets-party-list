@@ -27,29 +27,19 @@ export const onMessage = () => {
         return sheetsCreateMessage(msg);
 
       case "!sd":
-        return hasSheets(msg, async () => {
-          sheetsDetailMessage(msg);
-        });
+        return sheetsDetailMessage(msg);
 
       case "!sf":
-        return hasSheets(msg, async () => {
-          sheetsFinishMessage(msg);
-        });
+        return sheetsFinishMessage(msg);
 
       case "!start":
-        return hasSheets(msg, async () => {
-          startListeningMessage(msg);
-        });
+        return startListeningMessage(msg);
 
       case "!stop":
-        return hasSheets(msg, async () => {
-          stopListeningMessage(msg);
-        });
+        return stopListeningMessage(msg);
 
       default:
-        return isListening(msg, async () => {
-          defaultMessage(msg);
-        });
+        return defaultMessage(msg);
     }
   });
 };

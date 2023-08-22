@@ -1,10 +1,11 @@
 import { Message, MessageTypes } from "whatsapp-web.js";
 import { sanitizeNames } from "../../utils/sanitizeNames";
 import { handleAddGuest } from "../../event/handleAddGuest";
+import { middleware } from "../middleware/middleware";
 
 const defaultMessage = async (msg: Message) => {
   if (!msg.body) {
-    return
+    return;
   }
 
   const sanitizedNames = sanitizeNames(msg.body);
@@ -21,4 +22,6 @@ const defaultMessage = async (msg: Message) => {
   msg.react("👍");
 };
 
-export default defaultMessage;
+export default middleware(defaultMessage, {
+  isListening: true,
+});
