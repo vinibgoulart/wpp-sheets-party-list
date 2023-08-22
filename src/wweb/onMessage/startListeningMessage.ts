@@ -18,9 +18,7 @@ const startListeningMessage = async (msg: Message) => {
     }
   );
 
-  msg.reply(__("Listening to new names"));
-
-  msg.react("👍");
+  msg.react("🔈");
 };
 
 export default middleware(startListeningMessage, {

@@ -18,9 +18,7 @@ const stopListeningMessage = async (msg: Message) => {
     }
   );
 
-  msg.reply(__("Stopped listening to new names"));
-
-  msg.react("👍");
+  msg.react("🔇");
 };
 
 export default middleware(stopListeningMessage, {
