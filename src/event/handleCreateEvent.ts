@@ -2,6 +2,7 @@ import { __ } from "i18n";
 import SheetModel from "../sheets/SheetModel";
 import { createSheet } from "../sheets/api/createSheet";
 import { EVENT_SHEET_TITLE_ENUM } from "./EventSheetTitleEnum";
+import { EVENT_COLUMN_DESCRIPTION_ENUM } from "./EventColumnEnum";
 
 type HandleCreateSheetParam = {
   title: string;
@@ -24,7 +25,7 @@ export const handleCreateEvent = async (params: HandleCreateSheetParam) => {
                 values: [
                   {
                     userEnteredValue: {
-                      stringValue: __("Guests"),
+                      stringValue: EVENT_COLUMN_DESCRIPTION_ENUM.GUEST,
                     },
                   },
                 ],
@@ -39,7 +40,22 @@ export const handleCreateEvent = async (params: HandleCreateSheetParam) => {
                 values: [
                   {
                     userEnteredValue: {
-                      stringValue: __("Free"),
+                      stringValue: EVENT_COLUMN_DESCRIPTION_ENUM.FREE,
+                    },
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            startRow: 0,
+            startColumn: 2,
+            rowData: [
+              {
+                values: [
+                  {
+                    userEnteredValue: {
+                      stringValue: EVENT_COLUMN_DESCRIPTION_ENUM.PAID,
                     },
                   },
                 ],

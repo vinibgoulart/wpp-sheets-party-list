@@ -13,7 +13,7 @@
   "You can look up commands on sheets using `!help`": "Você pode consultar os comandos nas planilhas usando `!help`",
   "When a list is in progress, all messages sent in the group will be sent to excel, so it is recommended that there are no parallel conversations other than names in the group": "Quando uma lista está em andamento, todas as mensagens enviadas no grupo serão enviadas para o excel, por isso é recomendável que não haja conversas paralelas além de nomes no grupo",
   "You can submit names in several ways, send `!ie` to see all accepted forms": "Você pode enviar nomes de várias maneiras, envie `!ie` para ver todas as formas aceitas",
-  "When creating an event, you create it with the *Guests* and *Free* column": "Ao criar um evento, você o cria com as colunas *Guests* e *Free*",
+  "When creating an event, you create it with the *Guests*, *Free* and *Paid* column": "Ao criar um evento, você o cria com as colunas *Convidados*, *Free* e *Pago*",
   "All successful operations are reacted by the bot with an emoji, if not, contact whoever is organizing the event to find out the status of the list.": "Todas as operações bem sucedidas são reagidas pelo bot com um emoji, caso contrário, entre em contato com quem está organizando o evento para saber o status da lista.",
   "Sheet Finished": "Planilha Finalizada",
   "Sheet Detail": "Detalhes da Planilha",
@@ -32,5 +32,7 @@
   "All names are accepted and formatted for capital case, in addition to being automatically organized in alphabetical order": "Todos os nomes são aceitos e formatados para maiúsculas, além de serem organizados automaticamente em ordem alfabética",
   "No sheets found, create one with `!sc`": "Nenhuma planilha encontrada, crie uma com `!sc`",
   "Guests": "Convidados",
-  "Free": "Cortesia"
+  "Free": "Cortesia",
+  "Paid": "Pago",
+  "Use replying to a message to add a name to the Free column": "Use respondendo a uma mensagem para adicionar um nome na coluna Cortesia"
 }

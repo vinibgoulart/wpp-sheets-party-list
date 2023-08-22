@@ -22,11 +22,7 @@ ${__(
 )}
 
 ${__(
-  "When creating an event, you create it with the *Guests* and *Free* column"
-)}
-
-${__(
-  "All names are inserted in the Guests column, to insert one in the Free column, send the prefix `!free` in your message, see more by running `!help`"
+  "When creating an event, you create it with the *Guests*, *Free* and *Paid* column"
 )}
 
 ${__(

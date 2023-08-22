@@ -1,0 +1,19 @@
+import { __ } from "i18n";
+
+export enum EVENT_COLUMN_ENUM {
+  GUEST = "GUEST",
+  FREE = "FREE",
+  PAID = "PAID",
+}
+
+export const EVENT_COLUMN_DESCRIPTION_ENUM = {
+  [EVENT_COLUMN_ENUM.GUEST]: "Guest",
+  [EVENT_COLUMN_ENUM.FREE]: "Free",
+  [EVENT_COLUMN_ENUM.PAID]: "Paid",
+};
+
+export const EVENT_COLUMN_POSITION_ENUM = {
+  [EVENT_COLUMN_ENUM.GUEST]: "A",
+  [EVENT_COLUMN_ENUM.FREE]: "B",
+  [EVENT_COLUMN_ENUM.PAID]: "C",
+};

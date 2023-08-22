@@ -1,7 +1,6 @@
 import { client } from "../client";
-import { hasSheets } from "../middleware/hasSheets";
-import { isListening } from "../middleware/isListening";
 import defaultMessage from "./defaultMessage";
+import freeMessage from "./freeMessage";
 import helpMessage from "./helpMessage";
 import howItWorksMessage from "./howItWorksMessage";
 import inputExamplesMessage from "./inputExamplesMessage";
@@ -37,6 +36,9 @@ export const onMessage = () => {
 
       case "!stop":
         return stopListeningMessage(msg);
+
+      case "!free":
+        return freeMessage(msg);
 
       default:
         return defaultMessage(msg);

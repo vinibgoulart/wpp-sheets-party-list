@@ -6,6 +6,7 @@ import { onQrCode } from "./onQrCode";
 
 export const client = new Client({
   authStrategy: new LocalAuth(),
+  authTimeoutMs: 60 * 1000, 
 });
 
 export const connectClient = () => {
