@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "SHEET_VALUE_INPUT_OPTION_ENUM", {
+    enumerable: true,
+    get: function() {
+        return SHEET_VALUE_INPUT_OPTION_ENUM;
+    }
+});
+var SHEET_VALUE_INPUT_OPTION_ENUM;
+(function(SHEET_VALUE_INPUT_OPTION_ENUM) {
+    SHEET_VALUE_INPUT_OPTION_ENUM["RAW"] = "RAW";
+    SHEET_VALUE_INPUT_OPTION_ENUM["USER_ENTERED"] = "USER_ENTERED";
+    SHEET_VALUE_INPUT_OPTION_ENUM["INPUT_VALUE_OPTION_UNSPECIFIED"] = "INPUT_VALUE_OPTION_UNSPECIFIED";
+})(SHEET_VALUE_INPUT_OPTION_ENUM || (SHEET_VALUE_INPUT_OPTION_ENUM = {}));
