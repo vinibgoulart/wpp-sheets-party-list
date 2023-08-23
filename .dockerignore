@@ -1,5 +1,4 @@
 node_modules/
-.env
 
 sheet-credentials.json
 sheet-token.json
@@ -7,5 +6,3 @@ sheet-token.json
 .wwebjs_auth/
 .wwebjs_cache/
 .DS_Store
-
-dist/

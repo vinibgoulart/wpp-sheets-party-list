@@ -88,3 +88,17 @@ Start the server
 | `!start` | Start listening to new names                               | True            |
 | `!free`  | Use replying to a message to add a name to the Free column | True            |
 | `!paid`  | Use replying to a message to add a name to the Paid column | True            |
+
+## Run with docker
+
+Create an image
+
+```bash
+  docker build -t wpp-bot .
+```
+
+Run the image
+
+```bash
+  docker run -p 3000:3000 wpp-bot
+```

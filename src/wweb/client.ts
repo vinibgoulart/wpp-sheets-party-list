@@ -6,7 +6,10 @@ import { onQrCode } from "./onQrCode";
 
 export const client = new Client({
   authStrategy: new LocalAuth(),
-  authTimeoutMs: 60 * 1000, 
+  authTimeoutMs: 60 * 1000,
+  puppeteer: {
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  },
 });
 
 export const connectClient = () => {

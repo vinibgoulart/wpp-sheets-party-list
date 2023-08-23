@@ -23,7 +23,13 @@ const _onAuthFailure = require("./onAuthFailure");
 const _onQrCode = require("./onQrCode");
 const client = new _whatsappweb.Client({
     authStrategy: new _whatsappweb.LocalAuth(),
-    authTimeoutMs: 60 * 1000
+    authTimeoutMs: 60 * 1000,
+    puppeteer: {
+        args: [
+            "--no-sandbox",
+            "--disable-setuid-sandbox"
+        ]
+    }
 });
 const connectClient = ()=>{
     console.log("initializing client");
