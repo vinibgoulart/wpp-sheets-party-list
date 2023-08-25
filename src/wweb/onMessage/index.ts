@@ -5,6 +5,7 @@ import helpMessage from "./helpMessage";
 import howItWorksMessage from "./howItWorksMessage";
 import inputExamplesMessage from "./inputExamplesMessage";
 import paidMessage from "./paidMessage";
+import removeMessage from "./removeMessage";
 import sheetsCreateMessage from "./sheetsCreateMessage";
 import sheetsDetailMessage from "./sheetsDetailMessage";
 import sheetsFinishMessage from "./sheetsFinishMessage";
@@ -43,6 +44,9 @@ export const onMessage = () => {
 
       case "!paid":
         return paidMessage(msg);
+
+      case "!remove":
+        return removeMessage(msg);
 
       default:
         return defaultMessage(msg);
