@@ -32,22 +32,6 @@ All names are accepted and formatted for capital case, in addition to being auto
 - googleapis
 - whatsapp-web.js
 
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-```
-MONGO_URI: connection url for your mongo database
-SHEETS_CLIENT_ID: google sheet api client id
-SHEETS_PROJECT_ID: google sheet api project id
-SHEETS_AUTH_URI: google sheet api auth uri
-SHEETS_TOKEN_URI: google sheet api token uri
-SHEETS_AUTH_PROVIDER: google sheet api auth provider
-SHEETS_CLIENT_SECRET: google sheet api client secret
-```
-
-You can get sheets variables by following this documentation: https://developers.google.com/sheets/api/quickstart/nodejs#set_up_your_environment
-
 ## Run Locally
 
 Clone the project
@@ -74,6 +58,20 @@ Start the server
   pnpm dev
 ```
 
+## Run with docker
+
+Create an image
+
+```bash
+  docker build -t wpp-bot .
+```
+
+Run the image
+
+```bash
+  docker run -p 3000:3000 wpp-bot
+```
+
 ## API Reference
 
 | Input    | Description                                                | Require a Sheet |
@@ -88,17 +86,3 @@ Start the server
 | `!start` | Start listening to new names                               | True            |
 | `!free`  | Use replying to a message to add a name to the Free column | True            |
 | `!paid`  | Use replying to a message to add a name to the Paid column | True            |
-
-## Run with docker
-
-Create an image
-
-```bash
-  docker build -t wpp-bot .
-```
-
-Run the image
-
-```bash
-  docker run -p 3000:3000 wpp-bot
-```
