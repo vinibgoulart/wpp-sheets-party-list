@@ -1,5 +1,5 @@
-import { config } from "../../config";
-import { getDriveService, getSheetsService } from "../service";
+import { createPermission } from "../../drive/api/createPermission";
+import { getSheetsService } from "../SheetService";
 import type { sheets_v4 } from "googleapis";
 
 export type CreateSheetsPayload =
@@ -10,7 +10,6 @@ export const createSheet = async (
   options?: CreateSheetsPayload
 ) => {
   const { sheetsService } = await getSheetsService();
-  const { driveService } = await getDriveService();
 
   if (!title) {
     throw new Error("Please provide a title");
@@ -28,14 +27,7 @@ export const createSheet = async (
       requestBody: payload,
     });
 
-    driveService.permissions.create({
-      fileId: spreadsheet.data.spreadsheetId,
-      requestBody: {
-        emailAddress: config.GOOGLE_USER_EMAIL,
-        type: "user",
-        role: "writer",
-      },
-    });
+    await createPermission(spreadsheet.data.spreadsheetId);
 
     return {
       sheetId: spreadsheet.data.spreadsheetId,

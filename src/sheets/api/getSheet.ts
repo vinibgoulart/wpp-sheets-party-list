@@ -1,4 +1,4 @@
-import { getSheetsService } from "../service";
+import { getSheetsService } from "../SheetService";
 
 export const getSheet = async (spreadsheetId: string) => {
   const { sheetsService } = await getSheetsService();

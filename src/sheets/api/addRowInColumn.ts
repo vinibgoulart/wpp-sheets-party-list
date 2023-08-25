@@ -1,6 +1,6 @@
-import { getSheetsService } from "../service";
-import { SHEET_DIMENSION_ENUM } from "./SheetDimensionEnum";
-import { SHEET_VALUE_INPUT_OPTION_ENUM } from "./SheetValueInputOptionEnum";
+import { getSheetsService } from "../SheetService";
+import { SHEET_DIMENSION_ENUM } from "../SheetDimensionEnum";
+import { SHEET_VALUE_INPUT_OPTION_ENUM } from "../SheetValueInputOptionEnum";
 
 export const addRowInColumn = async (
   spreadsheetId: string,

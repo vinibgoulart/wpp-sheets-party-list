@@ -1,4 +1,4 @@
-import { getSheetsService } from "../service";
+import { getSheetsService } from "../SheetService";
 
 export const getRowsFromColumn = async (
   spreadsheetId: string,
