@@ -1,5 +1,5 @@
 import { Client, LocalAuth } from "whatsapp-web.js";
-import { onReady } from "./ready";
+import { onReady } from "./onReady";
 import { onMessage } from "./onMessage";
 import { onAuthFailure } from "./onAuthFailure";
 import { onQrCode } from "./onQrCode";
@@ -13,7 +13,6 @@ export const client = new Client({
 });
 
 export const connectClient = () => {
-  console.log("initializing client");
   client.initialize();
 
   onQrCode();
