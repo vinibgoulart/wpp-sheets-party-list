@@ -1,9 +1,9 @@
 import { __ } from "i18n";
 
-export enum EVENT_COLUMN_ENUM {
-  GUEST = "GUEST",
-  FREE = "FREE",
-  PAID = "PAID",
+export const EVENT_COLUMN_ENUM = {
+  GUEST: "GUEST",
+  FREE: "FREE",
+  PAID: "PAID",
 }
 
 export const EVENT_COLUMN_DESCRIPTION_ENUM = {
