@@ -7,6 +7,7 @@ import {
   EVENT_COLUMN_POSITION_ENUM,
 } from "./EventColumnEnum";
 import { EVENT_SHEET_TITLE_ENUM } from "./EventSheetTitleEnum";
+import { handleRemoveParticipant } from "./handleRemoveParticipant";
 
 type HandleAddParticipantParams = {
   groupId: string;
@@ -22,6 +23,11 @@ export const handleAddParticipant = async (
   const sheets = await SheetModel.findOne({
     groupId,
     removedAt: null,
+  });
+
+  await handleRemoveParticipant({
+    groupId,
+    names,
   });
 
   const columnPosition = EVENT_COLUMN_POSITION_ENUM[params.column];

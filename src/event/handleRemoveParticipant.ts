@@ -6,7 +6,7 @@ import {
   EVENT_COLUMN_ENUM,
   EVENT_COLUMN_POSITION_ENUM,
 } from "./EventColumnEnum";
-import { getRangeByColumn } from "./getRangeByColum";
+import { getRangeByColumn } from "./getRangeByColumn";
 
 type HandleRemoveParticipantParams = {
   groupId: string;

@@ -2,7 +2,7 @@ import SheetModel from "../sheets/SheetModel";
 import { getRowsFromColumn } from "../sheets/api/getRowsFromColumn";
 import { getSheet } from "../sheets/api/getSheet";
 import { EVENT_COLUMN_ENUM } from "./EventColumnEnum";
-import { getRangeByColumn } from "./getRangeByColum";
+import { getRangeByColumn } from "./getRangeByColumn";
 
 type HandleGetEventDetailsParams = {
   groupId: string;
