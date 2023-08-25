@@ -13,12 +13,15 @@ const sheetsDetailMessage = async (msg: Message) => {
     groupId,
   };
 
-  const { id, url, guestQty } = await handleGetEventDetails(payload);
+  const { id, url, qty } = await handleGetEventDetails(payload);
 
   msg.reply(`*${__("Sheet Detail")}:*    
 ID: *${id}*
 Url: *${url}*
-Number of participants: *${guestQty || 0}*`);
+Guest: *${qty.guest}*
+Free: *${qty.free}*
+Paid: *${qty.paid}*
+Total: *${qty.paid + qty.guest + qty.free}*`);
 
   msg.react("👍");
 

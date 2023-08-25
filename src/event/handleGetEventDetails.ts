@@ -1,7 +1,8 @@
 import SheetModel from "../sheets/SheetModel";
 import { getRowsFromColumn } from "../sheets/api/getRowsFromColumn";
 import { getSheet } from "../sheets/api/getSheet";
-import { EVENT_SHEET_TITLE_ENUM } from "./EventSheetTitleEnum";
+import { EVENT_COLUMN_ENUM } from "./EventColumnEnum";
+import { getRangeByColumn } from "./getRangeByColum";
 
 type HandleGetEventDetailsParams = {
   groupId: string;
@@ -17,14 +18,31 @@ export const handleGetEventDetails = async (
     removedAt: null,
   });
 
-  const range = `${EVENT_SHEET_TITLE_ENUM.DEFAULT}!A3:A`;
+  const rangeGuest = getRangeByColumn(EVENT_COLUMN_ENUM.GUEST);
+  const rangeFree = getRangeByColumn(EVENT_COLUMN_ENUM.FREE);
+  const rangePaid = getRangeByColumn(EVENT_COLUMN_ENUM.PAID);
 
   const { data } = await getSheet(sheets!.sheetId);
-  const { rows } = await getRowsFromColumn(sheets!.sheetId, range);
+  const { rows: rowsGuest } = await getRowsFromColumn(
+    sheets!.sheetId,
+    rangeGuest
+  );
+  const { rows: rowsFree } = await getRowsFromColumn(
+    sheets!.sheetId,
+    rangeFree
+  );
+  const { rows: rowsPaid } = await getRowsFromColumn(
+    sheets!.sheetId,
+    rangePaid
+  );
 
   return {
     id: data.spreadsheetId,
     url: data.spreadsheetUrl,
-    guestQty: rows?.length,
+    qty: {
+      guest: rowsGuest ? rowsGuest.length : 0,
+      free: rowsFree ? rowsFree.length : 0,
+      paid: rowsPaid ? rowsPaid.length : 0,
+    },
   };
 };

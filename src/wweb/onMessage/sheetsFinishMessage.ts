@@ -13,7 +13,7 @@ const sheetsFinishMessage = async (msg: Message) => {
     groupId,
   };
 
-  const { guestQty } = await handleGetEventDetails(payload);
+  const { qty } = await handleGetEventDetails(payload);
 
   const sheets = await SheetModel.findOneAndUpdate(
     {
@@ -32,7 +32,10 @@ const sheetsFinishMessage = async (msg: Message) => {
     `*${__("Sheet Finished")}:*
 ID: *${sheets!.sheetId}*
 Url: *${sheets!.sheetUrl}*
-Number of participants: *${guestQty || "0"}*`
+Guest: *${qty.guest}*
+Free: *${qty.free}*
+Paid: *${qty.paid}*
+Total: *${qty.paid + qty.guest + qty.free}*`
   );
 
   msg.react("👍");
