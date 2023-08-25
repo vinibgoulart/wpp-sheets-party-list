@@ -1,16 +1,16 @@
 import { __ } from "i18n";
 import SheetModel from "../sheets/SheetModel";
 import { createSheet } from "../sheets/api/createSheet";
-import { EVENT_SHEET_TITLE_ENUM } from "./EventSheetTitleEnum";
-import { EVENT_COLUMN_DESCRIPTION_ENUM } from "./EventColumnEnum";
+import { EVENT_SHEET_TITLE_ENUM } from "./enum/EventSheetTitleEnum";
+import { EVENT_COLUMN_DESCRIPTION_ENUM } from "./enum/EventColumnEnum";
 
-type HandleCreateSheetParam = {
+type CreateSheetParam = {
   title: string;
   groupId: string;
   createdBy: string;
 };
 
-export const handleCreateEvent = async (params: HandleCreateSheetParam) => {
+export const createEvent = async (params: CreateSheetParam) => {
   const { title, groupId, createdBy } = params;
 
   const options = {

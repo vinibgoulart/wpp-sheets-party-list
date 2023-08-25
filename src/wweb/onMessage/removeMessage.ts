@@ -1,8 +1,8 @@
 import { Message } from "whatsapp-web.js";
 import { sanitizeNames } from "../../utils/sanitizeNames";
-import { EVENT_COLUMN_ENUM } from "../../event/EventColumnEnum";
+import { EVENT_COLUMN_ENUM } from "../../event/enum/EventColumnEnum";
 import { middleware } from "../middleware/middleware";
-import { handleRemoveParticipant } from "../../event/handleRemoveParticipant";
+import { handleRemoveParticipants } from "../../event/handleRemoveParticipants";
 
 const removeMessage = async (msg: Message) => {
   const quotedMessage = await msg.getQuotedMessage();
@@ -17,7 +17,7 @@ const removeMessage = async (msg: Message) => {
     column: EVENT_COLUMN_ENUM.GUEST,
   };
 
-  await handleRemoveParticipant(payload);
+  await handleRemoveParticipants(payload);
 
   msg.react("❌");
 };

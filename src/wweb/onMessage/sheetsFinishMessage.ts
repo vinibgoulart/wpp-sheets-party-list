@@ -1,7 +1,7 @@
 import type { Message } from "whatsapp-web.js";
 import SheetModel from "../../sheets/SheetModel";
 import { __ } from "i18n";
-import { handleGetEventDetails } from "../../event/handleGetEventDetails";
+import { getEventDetails } from "../../event/getEventDetails";
 import { middleware } from "../middleware/middleware";
 
 const sheetsFinishMessage = async (msg: Message) => {
@@ -13,7 +13,7 @@ const sheetsFinishMessage = async (msg: Message) => {
     groupId,
   };
 
-  const { qty } = await handleGetEventDetails(payload);
+  const { qty } = await getEventDetails(payload);
 
   const sheets = await SheetModel.findOneAndUpdate(
     {

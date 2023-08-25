@@ -1,8 +1,8 @@
 import {
   EVENT_COLUMN_ENUM,
   EVENT_COLUMN_POSITION_ENUM,
-} from "./EventColumnEnum";
-import { EVENT_SHEET_TITLE_ENUM } from "./EventSheetTitleEnum";
+} from "./enum/EventColumnEnum";
+import { EVENT_SHEET_TITLE_ENUM } from "./enum/EventSheetTitleEnum";
 
 export const getRangeByColumn = (column: keyof typeof EVENT_COLUMN_ENUM) => {
   const columnPosition = EVENT_COLUMN_POSITION_ENUM[column];

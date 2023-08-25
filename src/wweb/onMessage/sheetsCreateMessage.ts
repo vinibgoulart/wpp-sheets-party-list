@@ -1,5 +1,5 @@
 import type { Message } from "whatsapp-web.js";
-import { handleCreateEvent } from "../../event/handleCreateEvent";
+import { createEvent } from "../../event/createEvent";
 import SheetModel from "../../sheets/SheetModel";
 import { setSheetsInDescription } from "../setSheetsInDescription";
 import { __ } from "i18n";
@@ -25,7 +25,7 @@ const sheetCreateMessage = async (msg: Message) => {
     createdBy: msg.id.participant,
   };
 
-  const { sheet } = await handleCreateEvent(payload);
+  const { sheet } = await createEvent(payload);
 
   msg.reply(
     `*${__("Sheet Created")}:*

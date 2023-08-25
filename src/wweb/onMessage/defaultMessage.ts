@@ -1,8 +1,8 @@
 import { Message, MessageTypes } from "whatsapp-web.js";
 import { sanitizeNames } from "../../utils/sanitizeNames";
-import { handleAddParticipant } from "../../event/handleAddParticipant";
+import { addParticipants } from "../../event/addParticipants";
 import { middleware } from "../middleware/middleware";
-import { EVENT_COLUMN_ENUM } from "../../event/EventColumnEnum";
+import { EVENT_COLUMN_ENUM } from "../../event/enum/EventColumnEnum";
 
 const defaultMessage = async (msg: Message) => {
   if (!msg.body) {
@@ -19,7 +19,7 @@ const defaultMessage = async (msg: Message) => {
     column: EVENT_COLUMN_ENUM.GUEST,
   };
 
-  await handleAddParticipant(payload);
+  await addParticipants(payload);
 
   msg.react("✅");
 };

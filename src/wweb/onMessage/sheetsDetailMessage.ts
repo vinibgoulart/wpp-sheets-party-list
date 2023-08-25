@@ -1,7 +1,7 @@
 import type { Message } from "whatsapp-web.js";
 import { setSheetsInDescription } from "../setSheetsInDescription";
 import { __ } from "i18n";
-import { handleGetEventDetails } from "../../event/handleGetEventDetails";
+import { getEventDetails } from "../../event/getEventDetails";
 import { middleware } from "../middleware/middleware";
 
 const sheetsDetailMessage = async (msg: Message) => {
@@ -13,7 +13,7 @@ const sheetsDetailMessage = async (msg: Message) => {
     groupId,
   };
 
-  const { id, url, qty } = await handleGetEventDetails(payload);
+  const { id, url, qty } = await getEventDetails(payload);
 
   msg.reply(`*${__("Sheet Detail")}:*    
 ID: *${id}*

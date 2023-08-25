@@ -1,7 +1,7 @@
 import { Message } from "whatsapp-web.js";
 import { sanitizeNames } from "../../utils/sanitizeNames";
-import { handleAddParticipant } from "../../event/handleAddParticipant";
-import { EVENT_COLUMN_ENUM } from "../../event/EventColumnEnum";
+import { addParticipants } from "../../event/addParticipants";
+import { EVENT_COLUMN_ENUM } from "../../event/enum/EventColumnEnum";
 import { middleware } from "../middleware/middleware";
 
 const freeMessage = async (msg: Message) => {
@@ -17,7 +17,7 @@ const freeMessage = async (msg: Message) => {
     column: EVENT_COLUMN_ENUM.FREE,
   };
 
-  await handleAddParticipant(payload);
+  await addParticipants(payload);
 
   msg.react("🚀");
 };

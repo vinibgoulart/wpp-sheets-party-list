@@ -1,20 +1,19 @@
 import SheetModel from "../sheets/SheetModel";
-import { addRowInColumn } from "../sheets/api/addRowInColumn";
+import { addRowsInColumn } from "../sheets/api/addRowsInColumn";
 import { getRowsFromColumn } from "../sheets/api/getRowsFromColumn";
 import { sanitizeNames } from "../utils/sanitizeNames";
 import {
   EVENT_COLUMN_ENUM,
-  EVENT_COLUMN_POSITION_ENUM,
-} from "./EventColumnEnum";
+} from "./enum/EventColumnEnum";
 import { getRangeByColumn } from "./getRangeByColumn";
 
-type HandleRemoveParticipantParams = {
+type HandleRemoveParticipantsParams = {
   groupId: string;
   names: string[];
 };
 
-export const handleRemoveParticipant = async (
-  params: HandleRemoveParticipantParams
+export const handleRemoveParticipants = async (
+  params: HandleRemoveParticipantsParams
 ) => {
   const { groupId, names } = params;
 
@@ -50,6 +49,6 @@ export const handleRemoveParticipant = async (
       ...Array(currentValues.length - sanitizedNames.length).fill(""),
     ];
 
-    await addRowInColumn(sheets!.sheetId, range, newValues);
+    await addRowsInColumn(sheets!.sheetId, range, newValues);
   }
 };

@@ -1,15 +1,15 @@
 import SheetModel from "../sheets/SheetModel";
 import { getRowsFromColumn } from "../sheets/api/getRowsFromColumn";
 import { getSheet } from "../sheets/api/getSheet";
-import { EVENT_COLUMN_ENUM } from "./EventColumnEnum";
+import { EVENT_COLUMN_ENUM } from "./enum/EventColumnEnum";
 import { getRangeByColumn } from "./getRangeByColumn";
 
-type HandleGetEventDetailsParams = {
+type GetEventDetailsParams = {
   groupId: string;
 };
 
-export const handleGetEventDetails = async (
-  params: HandleGetEventDetailsParams
+export const getEventDetails = async (
+  params: GetEventDetailsParams
 ) => {
   const { groupId } = params;
 

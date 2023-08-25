@@ -1,22 +1,22 @@
 import SheetModel from "../sheets/SheetModel";
-import { addRowInColumn } from "../sheets/api/addRowInColumn";
+import { addRowsInColumn } from "../sheets/api/addRowsInColumn";
 import { getRowsFromColumn } from "../sheets/api/getRowsFromColumn";
 import { sanitizeNames } from "../utils/sanitizeNames";
 import {
   EVENT_COLUMN_DESCRIPTION_ENUM,
   EVENT_COLUMN_POSITION_ENUM,
-} from "./EventColumnEnum";
-import { EVENT_SHEET_TITLE_ENUM } from "./EventSheetTitleEnum";
-import { handleRemoveParticipant } from "./handleRemoveParticipant";
+} from "./enum/EventColumnEnum";
+import { EVENT_SHEET_TITLE_ENUM } from "./enum/EventSheetTitleEnum";
+import { handleRemoveParticipants } from "./handleRemoveParticipants";
 
-type HandleAddParticipantParams = {
+type AddParticipantParams = {
   groupId: string;
   column: keyof typeof EVENT_COLUMN_DESCRIPTION_ENUM;
   names: string[];
 };
 
-export const handleAddParticipant = async (
-  params: HandleAddParticipantParams
+export const addParticipants = async (
+  params: AddParticipantParams
 ) => {
   const { groupId, names } = params;
 
@@ -25,7 +25,7 @@ export const handleAddParticipant = async (
     removedAt: null,
   });
 
-  await handleRemoveParticipant({
+  await handleRemoveParticipants({
     groupId,
     names,
   });
@@ -43,7 +43,7 @@ export const handleAddParticipant = async (
 
   const newValues = sanitizeNames(newNames.toString());
 
-  await addRowInColumn(sheets!.sheetId, range, newValues);
+  await addRowsInColumn(sheets!.sheetId, range, newValues);
 
   return {
     newValues,
