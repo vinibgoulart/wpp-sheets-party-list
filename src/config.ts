@@ -21,6 +21,7 @@ const {
   GOOGLE_TOKEN_URI,
   GOOGLE_AUTH_PROVIDER,
   GOOGLE_CLIENT_CERT_URL,
+  GOOGLE_USER_EMAIL,
 } = process.env;
 
 export const config = {
@@ -34,4 +35,5 @@ export const config = {
   GOOGLE_TOKEN_URI,
   GOOGLE_AUTH_PROVIDER,
   GOOGLE_CLIENT_CERT_URL,
+  GOOGLE_USER_EMAIL,
 };

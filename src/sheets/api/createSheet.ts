@@ -1,3 +1,4 @@
+import { config } from "../../config";
 import { getDriveService, getSheetsService } from "../service";
 import type { sheets_v4 } from "googleapis";
 
@@ -30,12 +31,12 @@ export const createSheet = async (
     driveService.permissions.create({
       fileId: spreadsheet.data.spreadsheetId,
       requestBody: {
-        emailAddress: "viblaziusgoulart@gmail.com",
+        emailAddress: config.GOOGLE_USER_EMAIL,
         type: "user",
         role: "writer",
       },
     });
-    
+
     return {
       sheetId: spreadsheet.data.spreadsheetId,
       sheetUrl: spreadsheet.data.spreadsheetUrl,
