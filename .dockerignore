@@ -1,7 +1,6 @@
 node_modules/
 
-sheet-credentials.json
-sheet-token.json
+credentials.json
 
 .wwebjs_auth/
 .wwebjs_cache/

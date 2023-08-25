@@ -1,8 +1,7 @@
 node_modules/
 .env
 
-sheet-credentials.json
-sheet-token.json
+credentials.json
 
 .wwebjs_auth/
 .wwebjs_cache/

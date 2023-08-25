@@ -18,7 +18,7 @@ const sheetsDetailMessage = async (msg: Message) => {
   msg.reply(`*${__("Sheet Detail")}:*    
 ID: *${id}*
 Url: *${url}*
-Number of participants: *${guestQty}*`);
+Number of participants: *${guestQty || 0}*`);
 
   msg.react("👍");
 
