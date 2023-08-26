@@ -2,22 +2,17 @@ import SheetModel from "../sheets/SheetModel";
 import { addRowsInColumn } from "../sheets/api/addRowsInColumn";
 import { getRowsFromColumn } from "../sheets/api/getRowsFromColumn";
 import { sanitizeNames } from "../utils/sanitizeNames";
-import {
-  EVENT_COLUMN_DESCRIPTION_ENUM,
-  EVENT_COLUMN_POSITION_ENUM,
-} from "./enum/EventColumnEnum";
+import { EVENT_COLUMN_POSITION_ENUM } from "./enum/EventColumnEnum";
 import { EVENT_SHEET_TITLE_ENUM } from "./enum/EventSheetTitleEnum";
 import { handleRemoveParticipants } from "./handleRemoveParticipants";
 
 type AddParticipantParams = {
   groupId: string;
-  column: keyof typeof EVENT_COLUMN_DESCRIPTION_ENUM;
+  column: keyof typeof EVENT_COLUMN_POSITION_ENUM;
   names: string[];
 };
 
-export const addParticipants = async (
-  params: AddParticipantParams
-) => {
+export const addParticipants = async (params: AddParticipantParams) => {
   const { groupId, names } = params;
 
   const sheets = await SheetModel.findOne({

@@ -16,6 +16,7 @@ const helpMessage = (msg: Message) => {
 *!start*: ${__("Start listening to new names")}
 *!free*: ${__("Use replying to a message to add a name to the Free column")}
 *!paid*: ${__("Use replying to a message to add a name to the Paid column")}
+*!remove*: ${__("Use replying to a message to remove a name from the list")}
 
 *Documentation*
 https://github.com/vinibgoulart/wpp-sheets-party-list

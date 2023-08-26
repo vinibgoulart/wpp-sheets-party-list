@@ -18,9 +18,9 @@ const sheetsDetailMessage = async (msg: Message) => {
   msg.reply(`*${__("Sheet Detail")}:*    
 ID: *${id}*
 Url: *${url}*
-Guest: *${qty.guest}*
-Free: *${qty.free}*
-Paid: *${qty.paid}*
+${__("Guests")}: *${qty.guest}*
+${__("Free")}: *${qty.free}*
+${__("Paid")}: *${qty.paid}*
 Total: *${qty.paid + qty.guest + qty.free}*`);
 
   msg.react("👍");

@@ -32,9 +32,9 @@ const sheetsFinishMessage = async (msg: Message) => {
     `*${__("Sheet Finished")}:*
 ID: *${sheets!.sheetId}*
 Url: *${sheets!.sheetUrl}*
-Guest: *${qty.guest}*
-Free: *${qty.free}*
-Paid: *${qty.paid}*
+${__("Guests")}: *${qty.guest}*
+${__("Free")}: *${qty.free}*
+${__("Paid")}: *${qty.paid}*
 Total: *${qty.paid + qty.guest + qty.free}*`
   );
 

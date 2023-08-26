@@ -2,7 +2,10 @@ import { __ } from "i18n";
 import SheetModel from "../sheets/SheetModel";
 import { createSheet } from "../sheets/api/createSheet";
 import { EVENT_SHEET_TITLE_ENUM } from "./enum/EventSheetTitleEnum";
-import { EVENT_COLUMN_DESCRIPTION_ENUM } from "./enum/EventColumnEnum";
+import {
+  EVENT_COLUMN_DESCRIPTION_ENUM,
+  EVENT_COLUMN_ENUM,
+} from "./enum/EventColumnEnum";
 
 type CreateSheetParam = {
   title: string;
@@ -25,7 +28,9 @@ export const createEvent = async (params: CreateSheetParam) => {
                 values: [
                   {
                     userEnteredValue: {
-                      stringValue: EVENT_COLUMN_DESCRIPTION_ENUM.GUEST,
+                      stringValue: __(
+                        EVENT_COLUMN_DESCRIPTION_ENUM[EVENT_COLUMN_ENUM.GUEST]
+                      ),
                     },
                   },
                 ],
@@ -40,7 +45,9 @@ export const createEvent = async (params: CreateSheetParam) => {
                 values: [
                   {
                     userEnteredValue: {
-                      stringValue: EVENT_COLUMN_DESCRIPTION_ENUM.FREE,
+                      stringValue: __(
+                        EVENT_COLUMN_DESCRIPTION_ENUM[EVENT_COLUMN_ENUM.FREE]
+                      ),
                     },
                   },
                 ],
@@ -55,7 +62,9 @@ export const createEvent = async (params: CreateSheetParam) => {
                 values: [
                   {
                     userEnteredValue: {
-                      stringValue: EVENT_COLUMN_DESCRIPTION_ENUM.PAID,
+                      stringValue: __(
+                        EVENT_COLUMN_DESCRIPTION_ENUM[EVENT_COLUMN_ENUM.PAID]
+                      ),
                     },
                   },
                 ],
