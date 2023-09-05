@@ -8,7 +8,10 @@ export const setSheetsInDescription = (
   chat: Chat,
   options: SetSheetsInDescriptionOptions
 ) => {
-  if (chat.groupMetadata.desc.includes("*Sheet Details*")) {
+  if (
+    chat.groupMetadata.desc &&
+    chat.groupMetadata.desc.includes("*Sheet Details*")
+  ) {
     const descriptionWithoutLabel =
       chat.groupMetadata.desc.split("*Sheet Details*")[0];
 
